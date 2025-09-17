@@ -1,18 +1,20 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import { connectToDatabase } from "../../lib/mongodb";
+// pages/api/test-mongo.ts
+import type { NextApiRequest, NextApiResponse } from 'next';
+import clientPromise from '../../lib/mongodb';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<{ message: string } | { error: string }>
+) {
   try {
-    const { db } = await connectToDatabase();
-    const collections = await db.listCollections().toArray();
+    const client = await clientPromise;
+    const db = client.db('flashcardFrenzy');
+    const testCollection = db.collection('test');
+    await testCollection.insertOne({ test: 'ok' });
 
-    res.status(200).json({
-      success: true,
-      db: db.databaseName,
-      collections: collections.map((c) => c.name),
-    });
-  } catch (error: any) {
-    console.error("❌ API MongoDB error:", error);
-    res.status(500).json({ success: false, message: error.message });
+    res.status(200).json({ message: 'MongoDB connection successful' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'MongoDB connection failed' });
   }
 }
