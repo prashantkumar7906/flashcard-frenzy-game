@@ -1,0 +1,189 @@
+/* globals.css */
+
+/* Import a clean, modern font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #f8fafc;
+  min-height: 100%;
+  display: flex;
+  justify-content: center; /* horizontal centering */
+  align-items: center;     /* vertical centering */
+}
+
+/* Ensure the Next.js root div stretches fully */
+#__next {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Buttons */
+button {
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover and active states */
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Input fields */
+input, textarea {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  color: #f8fafc;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+input:focus, textarea:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.3);
+}
+
+/* Cards / containers */
+.card {
+  background: #1e293b;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Headers */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  color: #f8fafc;
+  text-align: center;
+}
+
+/* Subtle text colors */
+.text-subtle {
+  color: #94a3b8;
+}
+
+/* Highlighted / accent text */
+.text-accent {
+  color: #38bdf8; /* sky-400 */
+}
+
+.text-success {
+  color: #22c55e; /* green-500 */
+}
+
+.text-error {
+  color: #ef4444; /* red-500 */
+}
+
+/* Gradients for buttons or panels */
+.bg-gradient-accent {
+  background: linear-gradient(90deg, #38bdf8, #6366f1); /* sky-400 to indigo-500 */
+}
+
+.bg-gradient-success {
+  background: linear-gradient(90deg, #22c55e, #16a34a); /* green gradients */
+}
+
+.bg-gradient-error {
+  background: linear-gradient(90deg, #ef4444, #b91c1c); /* red gradients */
+}
+
+/* Leaderboard list items */
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  background: #334155;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+  transition: background 0.2s;
+}
+
+.leaderboard-item:hover {
+  background: #475569;
+}
+
+/* Center content utility class (optional) */
+.center-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+/* Buttons: modern, pill-shaped, gradient, hover + active effects */
+button {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.8rem 2rem; /* wider for emphasis */
+  border-radius: 2rem; /* pill-like */
+  background: linear-gradient(135deg, #6366f1, #38bdf8); /* indigo to sky */
+  color: #f8fafc;
+  border: none;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  background: linear-gradient(135deg, #38bdf8, #6366f1); /* reverse gradient */
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Optional: different button types */
+button.primary {
+  background: linear-gradient(135deg, #6366f1, #38bdf8);
+}
+
+button.secondary {
+  background: linear-gradient(135deg, #f97316, #facc15); /* orange to yellow */
+}
+
+button.danger {
+  background: linear-gradient(135deg, #ef4444, #b91c1c); /* red shades */
+}
